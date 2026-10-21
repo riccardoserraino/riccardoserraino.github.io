@@ -1,0 +1,74 @@
+### your site title here
+
+title: Riccardo Serraino
+description: Automation and Control Engineering | Politecnico di Milano
+
+baseurl: "" #empty because the repository is named riccardoserraino.github.io
+url: "https://riccardoserraino.github.io" #custom url to be used instead of GitHub repository
+email: ricc.serraino@gmail.com
+
+# Pagination
+paginate: 4
+permalink: /blog/:year/:title/
+paginate_path: /blog/page:num/
+
+# Social media links in footer
+linkedin: "riccardo-serraino"
+stackoverflow: ""
+github: "riccardoserraino"
+researchgate: ""
+orcid: ""
+quora: ""
+instagram: ""
+facebook: ""
+bluesky: ""
+substack: ""
+
+# Markdown
+highlighter: rouge
+markdown: kramdown
+
+# Tracker
+analytics:
+
+# optimization -> compress.html
+compress_html:
+  clippings: [html,div, p, ul, td, h1, h2, h3, h4,link, meta, footer, nav, img, header, hr, br, head, style, li, ul, ol, time, main, script, title]
+  comments: ["<!-- ", " -->"]
+  endings: [all]
+  ignore:
+    envs: [local]
+  blanklines: false
+  profile: false
+  startings: []
+
+#collection
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
+    order:
+      - semg-motion-tracking.md
+      - muscle-synergy-pipeline.md
+      - truss-bridge-analysis.md
+      - automatic-coffee-machine.md
+      - riscv-cpu-core.md
+      - riscv-character-terminal.md
+      - quadcopter-frame.md
+
+sass:
+  sass_dir: /assets/css/_sass
+  style: compressed
+
+include:
+  - _pages
+
+exclude:
+  - README.md
+  - LICENSE.md
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-paginate
+  - jekyll-email-protect
+  - jekyll-target-blank
