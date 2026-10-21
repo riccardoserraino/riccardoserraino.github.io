@@ -13,7 +13,7 @@ permalink: /blog/:year/:title/
 paginate_path: /blog/page:num/
 
 # Social media links in footer
-linkedin: "riccardo-serraino"
+linkedin: "riccardo.serraino"
 #stackoverflow: ""
 github: "riccardoserraino"
 #researchgate: ""
