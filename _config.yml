@@ -14,15 +14,15 @@ paginate_path: /blog/page:num/
 
 # Social media links in footer
 linkedin: "riccardo-serraino"
-stackoverflow: ""
+#stackoverflow: ""
 github: "riccardoserraino"
-researchgate: ""
-orcid: ""
-quora: ""
-instagram: ""
-facebook: ""
-bluesky: ""
-substack: ""
+#researchgate: ""
+#orcid: ""
+#quora: ""
+instagram: "riccardo.serraino"
+#facebook: ""
+#bluesky: ""
+#substack: ""
 
 # Markdown
 highlighter: rouge
