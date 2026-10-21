@@ -7,13 +7,8 @@ baseurl: "" #empty because the repository is named riccardoserraino.github.io
 url: "https://riccardoserraino.github.io" #custom url to be used instead of GitHub repository
 email: ricc.serraino@gmail.com
 
-# Pagination
-paginate: 4
-permalink: /blog/:year/:title/
-paginate_path: /blog/page:num/
-
 # Social media links in footer
-linkedin: "riccardo.serraino"
+linkedin: "riccardo-serraino"
 #stackoverflow: ""
 github: "riccardoserraino"
 #researchgate: ""
@@ -69,6 +64,5 @@ exclude:
 
 plugins:
   - jekyll-seo-tag
-  - jekyll-paginate
   - jekyll-email-protect
   - jekyll-target-blank
