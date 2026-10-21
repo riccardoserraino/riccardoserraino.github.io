@@ -7,8 +7,8 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1" name="viewport">
-  <link rel="stylesheet" href="{{site.baseurl}}/assets/css/main.css">
-
+  <link rel="stylesheet" href="{{site.baseurl}}/assets/css/main.css?v={{ site.time | date: '%s' }}">
+  
   {% unless layout.hide_header_nav or page.hide_header_nav %}
   <header>
     <h1 class="post-headline">{{site.title}}</h1>

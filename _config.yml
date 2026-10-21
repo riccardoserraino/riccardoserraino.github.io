@@ -44,12 +44,7 @@ collections:
     permalink: /projects/:name/
     order:
       - semg-motion-tracking.md
-      - muscle-synergy-pipeline.md
-      - truss-bridge-analysis.md
-      - automatic-coffee-machine.md
-      - riscv-cpu-core.md
-      - riscv-character-terminal.md
-      - quadcopter-frame.md
+      
 
 sass:
   sass_dir: /assets/css/_sass
