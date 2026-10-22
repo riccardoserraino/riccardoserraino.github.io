@@ -69,5 +69,7 @@ languages:
     level: Native
   - name: English
     level: Fluent · IELTS 8.0
+  - name: French
+    level: Currently learning
   - name: Chinese (Mandarin)
-    level: Basic · still learning
+    level: About HSK 1 · on pause, planning to pick it up again

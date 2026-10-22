@@ -142,6 +142,22 @@
 .hv-scan { stroke: var(--accent); stroke-width: 1.2; fill: none; opacity: 0.5; }
 .hv-scan.dashed { stroke-dasharray: 3 4; }
 
+.hv-road { stroke: var(--line-2); stroke-width: 2; }
+.hv-lane { stroke: var(--muted); stroke-width: 2; stroke-dasharray: 14 12; opacity: 0.6; animation: hv-lane 0.9s linear infinite; }
+@keyframes hv-lane { to { stroke-dashoffset: 26; } }
+.hv-car { animation: hv-bump 0.9s ease-in-out infinite; }
+@keyframes hv-bump { 50% { transform: translateY(-1.5px); } }
+.hv-car-body { fill: var(--surface); stroke: var(--text); stroke-width: 3; stroke-linejoin: round; }
+.hv-car-win { fill: var(--msc); opacity: 0.35; }
+.hv-car-light { fill: var(--accent); }
+.hv-wheel circle { fill: var(--text); }
+.hv-wheel path { stroke: var(--bg); stroke-width: 2; }
+.hv-wheel { animation: hv-roll 0.6s linear infinite; }
+@keyframes hv-roll { to { transform: rotate(360deg); } }
+.hv-lidar-ring { fill: none; stroke: var(--accent); stroke-width: 1.5; opacity: 0; animation: hv-ping 1.8s ease-out infinite; }
+.hv-lidar-ring.r2 { animation-delay: 0.6s; }
+@keyframes hv-ping { 0% { opacity: 0.9; } 100% { opacity: 0; } }
+
 @include media-query($on-laptop) {
   .hero { grid-template-columns: 1fr; padding-top: 48px; }
   .hero-portrait { grid-row: 1; max-width: 220px; justify-self: start; }

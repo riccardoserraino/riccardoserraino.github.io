@@ -8,7 +8,7 @@ kind: Project · Aerial robotics
 role: Developer
 period: 2026
 cover: /assets/images/projects/uav-simulator/cover.svg
-cover_fit: cover
+cover_fit: contain
 summary: Quadrotor and hexacopter dynamic models in Python with quaternion attitude, RK4 integration and test scenarios for hover, climb, lateral motion and yaw.
 tags: [Python, NumPy, Rigid-body dynamics, Quaternions, RK4, Matplotlib]
 links:

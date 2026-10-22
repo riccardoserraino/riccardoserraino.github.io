@@ -10,7 +10,7 @@ period: Apr 2026
 place: Politecnico di Milano
 team: with Giuliano Livi
 cover: /assets/images/projects/odometry-estimator/cover.svg
-cover_fit: cover
+cover_fit: contain
 summary: C++ ROS 2 odometry for the Agile-X Bunker Pro tracked robot, switching between exact and Runge-Kutta integration, plus a node that measures the error against ground truth.
 tags: [ROS 2, C++, Odometry, Kinematics, TF2, RViz, rosbag]
 links:
@@ -43,7 +43,7 @@ The **Agile-X Bunker Pro** is a tracked robot. It has no steering wheels, so it 
 
 From the two track speeds the `odometer` node computes the forward speed **v** (their average) and the turning rate **ω** (their difference divided by the track width). It then integrates them at every step:
 
-- when the robot is **turning** (|ω| above a small threshold), it uses the **exact arc formula**;
+- when the robot is **turning** (the absolute value of ω is above a small threshold), it uses the **exact arc formula**;
 - when it is going **almost straight**, it switches to **Runge-Kutta 2** (midpoint), which avoids dividing by a tiny ω.
 
 The pose is published as an odometry message and a TF transform, and a `reset` service sets it back to zero.
