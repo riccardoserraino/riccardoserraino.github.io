@@ -1,0 +1,21 @@
+{% assign p = include.project %}{% assign tl = include.tag_limit | default: 4 %}
+<a class="card card--{{ p.degree }}{% if include.featured %} card--featured{% endif %} reveal" href="{{ p.url | relative_url }}">
+  <div class="card-media card-media--{{ p.cover_fit | default: 'contain' }}"{% if p.cover_bg %} style="background: {{ p.cover_bg }}"{% endif %}>
+    <img src="{{ p.cover | relative_url }}" alt="" loading="lazy">
+    {% if include.featured %}<span class="card-ribbon">{% if p.kind contains 'thesis' %}<i class="fas fa-graduation-cap"></i> Thesis{% else %}<i class="fas fa-star"></i> Flagship{% endif %}</span>{% endif %}
+  </div>
+  <div class="card-body">
+    <p class="card-kind">{{ p.kind }}</p>
+    <h3 class="card-title">{% if include.featured %}{{ p.title }}{% else %}{{ p.short_title | default: p.title }}{% endif %}</h3>
+    <p class="card-text">{{ p.summary }}</p>
+    {% if include.featured and p.metrics %}
+    <ul class="card-metrics">
+      {% for m in p.metrics limit:3 %}<li><strong>{{ m.value }}</strong><span>{{ m.label }}</span></li>{% endfor %}
+    </ul>
+    {% endif %}
+    <ul class="chips chips--sm">
+      {% for t in p.tags limit: tl %}<li>{{ t }}</li>{% endfor %}
+    </ul>
+    <span class="card-cta">Read the report <i class="fas fa-arrow-right"></i></span>
+  </div>
+</a>

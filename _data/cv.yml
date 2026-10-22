@@ -1,0 +1,73 @@
+# Content for the home page, kept in sync with assets/CV.pdf
+
+stats:
+  - value: "105/110"
+    label: BSc final grade
+  - value: "4/4"
+    label: Thesis grade
+  - value: "8.0"
+    label: IELTS Academic (C1)
+  - value: "3"
+    label: Universities, 2 countries
+
+timeline:
+  - when: Mar 2026 – Jun 2026
+    what: Robotics Team Member, FRE2026
+    where: AIRLab, Politecnico di Milano
+    kind: experience
+    text: Built the perception subsystem of an autonomous agricultural robot for the Field Robot Event 2026 in Germany.
+    link: /projects/fre2026-insect-detection/
+  - when: Sep 2025 – Present
+    what: MSc in Automation and Control Engineering
+    where: Politecnico di Milano
+    kind: education
+  - when: Apr 2025 – Jul 2025
+    what: Bachelor Thesis Student
+    where: University of Bologna
+    kind: experience
+    text: Dual-sensor Python framework fusing surface EMG and optical motion tracking to analyse hand gestures.
+    link: /projects/semg-motion-tracking/
+  - when: Feb 2025 – Apr 2025
+    what: Student Researcher (BSc level)
+    where: University of Bologna
+    kind: experience
+    text: Robotic-hand control from sEMG through muscle synergies, using NMF, PCA and autoencoders.
+    link: /projects/synergy-extraction/
+  - when: Sep 2023 – Jul 2024
+    what: Exchange year, AlmaTong Double Degree
+    where: Tongji University (同济大学), Shanghai
+    kind: education
+  - when: Sep 2022 – Jul 2025
+    what: BSc in Automation Engineering
+    where: Alma Mater Studiorum – University of Bologna
+    kind: education
+    text: "Final grade 105/110 · GPA 26.6/30 · Thesis 4/4"
+
+skills:
+  - group: Programming
+    items: [Python, C/C++, MATLAB/Simulink, SQL, Verilog, SFC/ST, Docker]
+  - group: Robotics & AI
+    items: [ROS2, YOLO, Computer Vision, Robot Perception, Machine Learning, Luxonis OAK-D, RViz, Foxglove Studio, Gazebo]
+  - group: Lab & Hardware
+    items: [Vicon motion capture, sEMG armband, FPGA / RISC-V, CODESYS PLC, Fusion 360]
+
+certifications:
+  - name: IELTS Academic, Band 8.0 (C1)
+    by: British Council
+    when: Aug 2025
+    url: https://drive.google.com/file/d/1ZeVZoBXO7UuT9sTcKKrIeZDLKE8LFk2M/view?usp=sharing
+  - name: Chinese Language for Beginners
+    by: Politecnico di Milano
+    when: Dec 2025
+  - name: Business Intelligence Data Analysis (50 h)
+    by: Codecademy
+    when: Sep 2024
+    url: https://www.codecademy.com/profiles/riccardo.serraino/certificates/d03c7391224540ef8f850f8807a2b72a
+
+languages:
+  - name: Italian
+    level: Native
+  - name: English
+    level: Fluent · IELTS 8.0
+  - name: Chinese (Mandarin)
+    level: Basic · still learning

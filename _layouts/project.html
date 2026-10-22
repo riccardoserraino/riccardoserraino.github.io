@@ -1,0 +1,96 @@
+---
+layout: default
+---
+{% assign msc = site.projects | where: "degree", "msc" | sort: "order" %}
+{% assign bsc = site.projects | where: "degree", "bsc" | sort: "order" %}
+{% assign all = msc | concat: bsc %}
+{% for p in all %}{% if p.url == page.url %}{% assign idx = forloop.index0 %}{% endif %}{% endfor %}
+{% assign n = all | size %}
+{% assign prev_i = idx | minus: 1 %}{% if prev_i < 0 %}{% assign prev_i = n | minus: 1 %}{% endif %}
+{% assign next_i = idx | plus: 1 %}{% if next_i >= n %}{% assign next_i = 0 %}{% endif %}
+{% assign prev = all[prev_i] %}{% assign next = all[next_i] %}
+{% if page.degree == 'msc' %}{% assign school = "MSc · Politecnico di Milano" %}{% else %}{% assign school = "BSc · University of Bologna" %}{% endif %}
+
+<article class="report report--{{ page.degree }}">
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="{{ '/projects/' | relative_url }}">Projects</a>
+    <i class="fas fa-chevron-right"></i>
+    <a href="{{ '/projects/' | relative_url }}#{{ page.degree }}">{{ school }}</a>
+  </nav>
+
+  <header class="report-hero">
+    <p class="report-kind"><span class="deg-dot"></span>{{ page.kind }}</p>
+    <h1 class="report-title">{{ page.title }}</h1>
+    {% if page.subtitle %}<p class="report-sub">{{ page.subtitle }}</p>{% endif %}
+
+    <dl class="report-meta">
+      {% if page.role %}<div><dt>Role</dt><dd>{{ page.role }}</dd></div>{% endif %}
+      {% if page.period %}<div><dt>When</dt><dd>{{ page.period }}</dd></div>{% endif %}
+      {% if page.place %}<div><dt>Where</dt><dd>{{ page.place }}</dd></div>{% endif %}
+      {% if page.team %}<div><dt>Team</dt><dd>{{ page.team }}</dd></div>{% endif %}
+    </dl>
+
+    {% if page.links %}
+    <div class="report-links">
+      {% for l in page.links %}
+      <a class="btn{% if forloop.first %} btn--primary{% endif %}" href="{{ l.url }}" target="_blank" rel="noopener"><i class="{{ l.icon | default: 'fas fa-link' }}"></i> {{ l.label }}</a>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </header>
+
+  {% if page.cover %}
+  <figure class="report-cover report-cover--{{ page.cover_fit | default: 'contain' }}"{% if page.cover_bg %} style="background: {{ page.cover_bg }}"{% endif %}>
+    <img src="{{ page.cover | relative_url }}" alt="{{ page.short_title | default: page.title }}">
+  </figure>
+  {% endif %}
+
+  {% if page.metrics %}
+  <section class="metrics" aria-label="Key results">
+    {% for m in page.metrics %}
+    <div class="metric reveal"><strong>{{ m.value }}</strong><span>{{ m.label }}</span></div>
+    {% endfor %}
+  </section>
+  {% endif %}
+
+  {% if page.pipeline %}
+  <section class="pipeline">
+    <h2 class="block-title">How it works</h2>
+    <ol class="steps steps--{{ page.pipeline | size }}">
+      {% for s in page.pipeline %}
+      <li class="step reveal">
+        <span class="step-n">{{ forloop.index | prepend: '0' | slice: -2, 2 }}</span>
+        <h3>{{ s.title }}</h3>
+        <p>{{ s.text }}</p>
+      </li>
+      {% endfor %}
+    </ol>
+  </section>
+  {% endif %}
+
+  <div class="report-layout">
+    <aside class="toc" aria-label="On this page"><p>On this page</p><ol></ol></aside>
+    <div class="report-body prose">
+      {{ content }}
+    </div>
+  </div>
+
+  {% if page.tags %}
+  <section class="stack">
+    <h2 class="block-title">Tools &amp; techniques</h2>
+    <ul class="chips">{% for t in page.tags %}<li>{{ t }}</li>{% endfor %}</ul>
+  </section>
+  {% endif %}
+
+  <nav class="pager" aria-label="More projects">
+    <a class="pager-link pager-link--prev" href="{{ prev.url | relative_url }}">
+      <small><i class="fas fa-arrow-left"></i> Previous</small>
+      <span>{{ prev.short_title | default: prev.title }}</span>
+    </a>
+    <a class="pager-link pager-link--all" href="{{ '/projects/' | relative_url }}"><i class="fas fa-grip"></i><small>All projects</small></a>
+    <a class="pager-link pager-link--next" href="{{ next.url | relative_url }}">
+      <small>Next <i class="fas fa-arrow-right"></i></small>
+      <span>{{ next.short_title | default: next.title }}</span>
+    </a>
+  </nav>
+</article>

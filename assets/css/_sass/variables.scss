@@ -1,22 +1,63 @@
-$base-font-family: 'Courier Prime', 'Courier New', monospace;
-$base-font-size:   18px;
-$base-font-weight: 400;
-$small-font-size:  $base-font-size * 0.875;
+// Fonts
+$font-display: 'Space Grotesk', 'IBM Plex Sans', system-ui, sans-serif;
+$font-body:    'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+$font-mono:    'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+
+// Kept for the syntax-highlighting partial
+$base-font-size:   17px;
 $base-line-height: 1.7;
+$brand-color:      #14b8a6;
 
-$spacing-unit:     30px;
-$light-gray: gray;
-$text-color:       #333;
-$background-color: #fdfdfd;
-$brand-color:      #2f6fe0;
-$projectbox-text: #dbe6f8;
+// Design tokens — light is the base, dark overrides below
+:root {
+  --bg:        #f5f7fb;
+  --bg-2:      #eef2f8;
+  --surface:   #ffffff;
+  --surface-2: #f8fafc;
+  --line:      #dfe5ee;
+  --line-2:    #c9d3e1;
+  --text:      #0e1726;
+  --text-2:    #3b4759;
+  --muted:     #6b7789;
+  --accent:    #0d9488;
+  --accent-2:  #14b8a6;
+  --accent-ink:#ffffff;
+  --msc:       #2f6fe0;
+  --bsc:       #d93a46;
+  --plate:     #ffffff;
+  --grid:      rgba(14, 23, 38, 0.045);
+  --glow:      rgba(13, 148, 136, 0.16);
+  --shadow:    0 1px 2px rgba(14, 23, 38, 0.05), 0 8px 24px rgba(14, 23, 38, 0.07);
+  --shadow-lg: 0 2px 4px rgba(14, 23, 38, 0.06), 0 24px 48px rgba(14, 23, 38, 0.12);
+  --header-bg: rgba(245, 247, 251, 0.78);
+  color-scheme: light;
+}
 
-// Color scheme for light
-$body-bg: #fdfdfd;
-$projectbox: #d3e8f8;
-$text-color: #333;
+@mixin dark-tokens {
+  --bg:        #080c14;
+  --bg-2:      #0c121d;
+  --surface:   #101827;
+  --surface-2: #131d2e;
+  --line:      #1e2a3d;
+  --line-2:    #2a3a53;
+  --text:      #e8eef8;
+  --text-2:    #b6c2d4;
+  --muted:     #7d8aa0;
+  --accent:    #2dd4bf;
+  --accent-2:  #5eead4;
+  --accent-ink:#04201c;
+  --msc:       #5b93ff;
+  --bsc:       #ff6b74;
+  --plate:     #f4f6fa;
+  --grid:      rgba(148, 178, 220, 0.055);
+  --glow:      rgba(45, 212, 191, 0.18);
+  --shadow:    0 1px 2px rgba(0, 0, 0, 0.4), 0 10px 30px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 2px 6px rgba(0, 0, 0, 0.45), 0 28px 60px rgba(0, 0, 0, 0.5);
+  --header-bg: rgba(8, 12, 20, 0.72);
+  color-scheme: dark;
+}
 
-// Color scheme for dark modes
-$body-bg-dark: #262b33;
-$projectbox-dark: lighten(#aab2be, 2%);
-$text-color-dark: #b4bcc8;
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { @include dark-tokens; }
+}
+:root[data-theme="dark"] { @include dark-tokens; }

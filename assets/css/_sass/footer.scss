@@ -1,16 +1,14 @@
 /* Footer */
-footer {
-    clear: both;
-    margin-top: 2em;
+.site-footer {
+  margin-top: 120px;
+  padding: 36px 24px 44px;
+  border-top: 1px solid var(--line);
+  text-align: center;
 }
 
-/* Footer navigation links */
-.links a {
-    margin-right: 1em;
-}
-
-/* Footer copyrights */
 .copy {
-    color: #aaa;
-    text-align: center;
+  margin: 18px 0 0;
+  color: var(--muted);
+  font-family: $font-mono;
+  font-size: 0.74rem;
 }

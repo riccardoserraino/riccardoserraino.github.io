@@ -1,4 +1,16 @@
-<div class="navbar links scroll">
-        <a href="{{site.baseurl}}/">Home</a>
-        <a href="{{site.baseurl}}/projects/">Projects</a>
-</div>
+<header class="site-header">
+  <nav class="nav">
+    <a class="brand" href="{{ '/' | relative_url }}" aria-label="Home">
+      <span class="brand-mark">RS</span>
+      <span class="brand-name">{{ site.title }}</span>
+    </a>
+    <div class="nav-links">
+      <a href="{{ '/' | relative_url }}"{% if page.url == '/' %} aria-current="page"{% endif %}>Home</a>
+      <a href="{{ '/projects/' | relative_url }}"{% if page.url contains '/projects/' %} aria-current="page"{% endif %}>Projects</a>
+      <a href="{{ '/assets/CV.pdf' | relative_url }}" target="_blank" rel="noopener">CV</a>
+      <button class="theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle theme">
+        <i class="fas fa-moon icon-dark"></i><i class="fas fa-sun icon-light"></i>
+      </button>
+    </div>
+  </nav>
+</header>

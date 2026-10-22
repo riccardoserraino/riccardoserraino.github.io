@@ -2,13 +2,11 @@
 # Only the main Sass file needs front matter (the dashes are enough)
 ---
 
-
 @charset "utf-8";
 
-// Width of the content area
-$content-width:    800px;
-$on-phone:         450px;
-$on-palm:          660px;
+$content-width:    1120px;
+$on-phone:         480px;
+$on-palm:          720px;
 $on-laptop:        1000px;
 
 @mixin media-query($device) {
@@ -17,17 +15,12 @@ $on-laptop:        1000px;
     }
 }
 
-// Import partials from `sass_dir` (defaults to `_sass`)
-// Do not make any changes to this file. Go to /_sass and find the appropriate SCSS file and make changes there.
-
-// JN: For now, split @import to anable conditional import of CSS. Also. @import may be deprecated soon so plan
-// for this change
-
+// Partials live in /assets/css/_sass
 @import 'variables';
-@import 'footer-social';
-@import 'projects';
-@import 'profile';
-@import 'footer';
 @import 'style';
-@import 'google-fonts';
+@import 'footer';
+@import 'footer-social';
+@import 'profile';
+@import 'projects';
+@import 'report';
 @import 'syntax-highlighting';

@@ -1,0 +1,19 @@
+{% assign ps = site.projects | where: "degree", include.degree | sort: "order" %}
+<section class="degree degree--{{ include.degree }}" id="{{ include.degree }}">
+  <header class="degree-head reveal">
+    <span class="degree-tag">{{ include.label }}</span>
+    <div>
+      <h2 class="degree-school">{{ include.school }}</h2>
+      <p class="degree-prog">{{ include.programme }} <span class="dot">·</span> {{ include.period }}</p>
+    </div>
+  </header>
+  {% for p in ps %}{% if p.featured %}
+    {% include project-card.html project=p featured=true tag_limit=6 %}
+  {% endif %}{% endfor %}
+  <h3 class="sub-head reveal">{{ include.others_label | default: "Other relevant projects" }}</h3>
+  <div class="grid">
+    {% for p in ps %}{% unless p.featured %}
+      {% include project-card.html project=p %}
+    {% endunless %}{% endfor %}
+  </div>
+</section>

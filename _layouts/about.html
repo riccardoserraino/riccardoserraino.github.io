@@ -1,11 +1,108 @@
 ---
 layout: default
 ---
+{% assign cv = site.data.cv %}
 
-{% if page.profile %}
-    {% if page.profile.image %}
-      <img class="profile {{ page.profile.align }}"  width="33.33%" src="{{ page.profile.image | prepend: '/assets/images/' | relative_url }}">
-    {% endif %}
-{% endif %}
+<section class="hero">
+  <div class="hero-text">
+    <p class="eyebrow"><span class="pulse"></span> {{ page.eyebrow }}</p>
+    <h1 class="hero-title">Riccardo<br><span class="grad">Serraino</span></h1>
+    <p class="hero-lede">{{ page.tagline }}</p>
+    <div class="hero-cta">
+      <a class="btn btn--primary" href="{{ '/projects/' | relative_url }}">Explore projects <i class="fas fa-arrow-right"></i></a>
+      <a class="btn" href="{{ '/assets/CV.pdf' | relative_url }}" target="_blank" rel="noopener"><i class="fas fa-file-lines"></i> Curriculum vitae</a>
+    </div>
+  </div>
+  {% if page.profile.image %}
+  <div class="hero-portrait">
+    <div class="portrait-ring">
+      <img src="{{ page.profile.image | prepend: '/assets/images/' | relative_url }}" alt="Portrait of Riccardo Serraino">
+    </div>
+    <span class="portrait-tag portrait-tag--a">MSc · PoliMi</span>
+    <span class="portrait-tag portrait-tag--b">BSc · UniBo</span>
+  </div>
+  {% endif %}
+  <div class="hero-signal">{% include signal.html %}</div>
+</section>
 
-{{ content }}
+<section class="stats reveal">
+  {% for s in cv.stats %}
+  <div class="stat"><strong>{{ s.value }}</strong><span>{{ s.label }}</span></div>
+  {% endfor %}
+</section>
+
+<section class="section about">
+  <h2 class="section-title"><span class="idx">01</span> About</h2>
+  <div class="prose reveal">
+    {{ content }}
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-row">
+    <h2 class="section-title"><span class="idx">02</span> Selected work</h2>
+    <a class="link-arrow" href="{{ '/projects/' | relative_url }}">All projects <i class="fas fa-arrow-right"></i></a>
+  </div>
+  <div class="grid grid--home">
+    {% assign msc = site.projects | where: "degree", "msc" | sort: "order" %}
+    {% assign bsc = site.projects | where: "degree", "bsc" | sort: "order" %}
+    {% for p in msc limit:1 %}{% include project-card.html project=p %}{% endfor %}
+    {% for p in bsc limit:2 %}{% include project-card.html project=p %}{% endfor %}
+  </div>
+</section>
+
+<section class="section">
+  <h2 class="section-title"><span class="idx">03</span> Path so far</h2>
+  <ol class="timeline">
+    {% for t in cv.timeline %}
+    <li class="tl-item tl-item--{{ t.kind }} reveal">
+      <span class="tl-dot"></span>
+      <p class="tl-when">{{ t.when }}<span class="tl-kind">{{ t.kind }}</span></p>
+      <h3 class="tl-what">{{ t.what }}</h3>
+      <p class="tl-where">{{ t.where }}</p>
+      {% if t.text %}<p class="tl-text">{{ t.text }}</p>{% endif %}
+      {% if t.link %}<a class="link-arrow" href="{{ t.link | relative_url }}">See the project <i class="fas fa-arrow-right"></i></a>{% endif %}
+    </li>
+    {% endfor %}
+  </ol>
+</section>
+
+<section class="section">
+  <h2 class="section-title"><span class="idx">04</span> Toolbox</h2>
+  <div class="skills">
+    {% for g in cv.skills %}
+    <div class="skill-group reveal">
+      <h3>{{ g.group }}</h3>
+      <ul class="chips">{% for i in g.items %}<li>{{ i }}</li>{% endfor %}</ul>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="section split">
+  <div>
+    <h2 class="section-title"><span class="idx">05</span> Certifications</h2>
+    <ul class="certs">
+      {% for c in cv.certifications %}
+      <li class="reveal">
+        {% if c.url %}<a href="{{ c.url }}" target="_blank" rel="noopener">{{ c.name }} <i class="fas fa-arrow-up-right-from-square"></i></a>{% else %}<span>{{ c.name }}</span>{% endif %}
+        <small>{{ c.by }} · {{ c.when }}</small>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  <div>
+    <h2 class="section-title"><span class="idx">06</span> Languages</h2>
+    <ul class="langs">
+      {% for l in cv.languages %}
+      <li class="reveal"><span>{{ l.name }}</span><small>{{ l.level }}</small></li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="contact reveal">
+  <h2>Let's talk robots.</h2>
+  <p>Open to internships and collaborations in robotics, perception and control.</p>
+  <a class="btn btn--primary" href="mailto:{{ site.email }}"><i class="far fa-envelope"></i> {{ site.email }}</a>
+</section>

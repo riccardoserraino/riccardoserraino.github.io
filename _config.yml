@@ -42,9 +42,13 @@ collections:
   projects:
     output: true
     permalink: /projects/:name/
-    order:
-      - semg-motion-tracking.md
-      
+
+defaults:
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: project
 
 sass:
   sass_dir: /assets/css/_sass
@@ -56,6 +60,9 @@ include:
 exclude:
   - README.md
   - LICENSE.md
+  - LICENSE
+  - Gemfile
+  - Gemfile.lock
 
 plugins:
   - jekyll-seo-tag

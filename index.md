@@ -1,25 +1,16 @@
 ---
 layout: about
 permalink: /
+eyebrow: Automation & Control Engineering · Politecnico di Milano
+tagline: I build the perception and control that let robots understand people and the world around them, from muscle signals to cameras on a field robot.
 profile:
   align: right
   image: profile.png
 published: true
 ---
 
-Hi, I'm Riccardo, an engineering student born in Bologna, Italy. I hold a BSc in Automation Engineering from the University of Bologna, including an exchange year at Tongji University in Shanghai through the AlmaTong double degree. I'm now pursuing an MSc in Automation and Control Engineering at Politecnico di Milano.
+Hi, I'm Riccardo, an engineering student born and raised in **Bologna**, Italy. I hold a **BSc in Automation Engineering** from the University of Bologna. During that degree I spent a full exchange year at **Tongji University in Shanghai** (同济大学) on the AlmaTong double degree programme, with an honours scholarship. I'm now pursuing an **MSc in Automation and Control Engineering at Politecnico di Milano**.
 
-My main passion moves between AI and Robotics and all their applications.
+My main passion is **AI and robotics** and everything you can build with them. So far that has meant human–robot interfaces driven by muscle synergies in a university robotics lab, and a real-time insect detector for an autonomous field robot with the AIRLab team.
 
-Beside my life in the lab I'm a sporty guy who loves the gym and running (when not injured, haha), planning trips, food/beverage tasting, cooking, learning languages.
-
-### Documents
-
-- [Curriculum vitae]({{ "/assets/CV.pdf" | relative_url }}){:target="_blank"} - education, experience, skills and projects
-- [IELTS, Band 8](https://drive.google.com/file/d/1ZeVZoBXO7UuT9sTcKKrIeZDLKE8LFk2M/view?usp=sharing){:target="_blank"} - British Council, August 2025
-
-
-### Additional Info
-
-- Location: Milan, Italy
-- Job: Student 
+Outside the lab I'm a sporty guy who loves the gym and running (when I'm not injured, haha). I also enjoy planning trips, tasting food and drinks, cooking and learning languages.

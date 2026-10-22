@@ -1,0 +1,14 @@
+<div class="fig-pair">
+<figure class="fig">
+<a class="fig-plate" href="{{ include.a | relative_url }}" target="_blank" rel="noopener">
+<img src="{{ include.a | relative_url }}" alt="{{ include.a_caption | escape }}" loading="lazy">
+</a>
+{% if include.a_caption %}<figcaption>{{ include.a_caption }}</figcaption>{% endif %}
+</figure>
+<figure class="fig">
+<a class="fig-plate" href="{{ include.b | relative_url }}" target="_blank" rel="noopener">
+<img src="{{ include.b | relative_url }}" alt="{{ include.b_caption | escape }}" loading="lazy">
+</a>
+{% if include.b_caption %}<figcaption>{{ include.b_caption }}</figcaption>{% endif %}
+</figure>
+</div>
