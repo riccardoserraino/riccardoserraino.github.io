@@ -66,6 +66,13 @@ a:hover { color: var(--text); }
 
 img { max-width: 100%; display: block; }
 
+.icon {
+  width: 1.05em;
+  height: 1.05em;
+  flex-shrink: 0;
+  vertical-align: -0.15em;
+}
+
 ::selection { background: var(--accent); color: var(--accent-ink); }
 
 :focus-visible {
@@ -164,6 +171,7 @@ img { max-width: 100%; display: block; }
 }
 .theme-toggle:hover { color: var(--accent); border-color: var(--accent); transform: rotate(-12deg); }
 .theme-toggle .icon-light { display: none; }
+.theme-toggle span { display: inline-flex; }
 :root[data-theme="dark"] .theme-toggle .icon-light { display: inline; }
 :root[data-theme="dark"] .theme-toggle .icon-dark { display: none; }
 @media (prefers-color-scheme: dark) {
@@ -271,8 +279,8 @@ img { max-width: 100%; display: block; }
   font-size: 0.8rem;
   color: var(--accent);
 }
-.link-arrow i { transition: transform 0.2s ease; }
-.link-arrow:hover i { transform: translateX(4px); }
+.link-arrow .icon { transition: transform 0.2s ease; }
+.link-arrow:hover .icon { transform: translateX(4px); }
 
 .dot { color: var(--muted); padding: 0 4px; }
 

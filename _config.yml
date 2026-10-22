@@ -6,6 +6,7 @@ description: Automation and Control Engineering | Politecnico di Milano
 baseurl: "" #empty because the repository is named riccardoserraino.github.io
 url: "https://riccardoserraino.github.io" #custom url to be used instead of GitHub repository
 email: ricc.serraino@gmail.com
+email_academic: riccardo.serraino@mail.polimi.it
 
 # Social media links in footer
 linkedin: "riccardo-serraino"
@@ -63,6 +64,7 @@ exclude:
   - LICENSE
   - Gemfile
   - Gemfile.lock
+  - GUIDE.md
 
 plugins:
   - jekyll-seo-tag

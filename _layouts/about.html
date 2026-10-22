@@ -9,8 +9,8 @@ layout: default
     <h1 class="hero-title">Riccardo<br><span class="grad">Serraino</span></h1>
     <p class="hero-lede">{{ page.tagline }}</p>
     <div class="hero-cta">
-      <a class="btn btn--primary" href="{{ '/projects/' | relative_url }}">Explore projects <i class="fas fa-arrow-right"></i></a>
-      <a class="btn" href="{{ '/assets/CV.pdf' | relative_url }}" target="_blank" rel="noopener"><i class="fas fa-file-lines"></i> Curriculum vitae</a>
+      <a class="btn btn--primary" href="{{ '/projects/' | relative_url }}">Explore projects {% include icon.html name="arrow-right" %}</a>
+      <a class="btn" href="{{ '/assets/CV.pdf' | relative_url }}" target="_blank" rel="noopener">{% include icon.html name="file-text" %} Curriculum vitae</a>
     </div>
   </div>
   {% if page.profile.image %}
@@ -22,7 +22,7 @@ layout: default
     <span class="portrait-tag portrait-tag--b">BSc · UniBo</span>
   </div>
   {% endif %}
-  <div class="hero-signal">{% include signal.html %}</div>
+  <div class="hero-signal">{% include hero-visual.html %}</div>
 </section>
 
 <section class="stats reveal">
@@ -41,7 +41,7 @@ layout: default
 <section class="section">
   <div class="section-row">
     <h2 class="section-title"><span class="idx">02</span> Selected work</h2>
-    <a class="link-arrow" href="{{ '/projects/' | relative_url }}">All projects <i class="fas fa-arrow-right"></i></a>
+    <a class="link-arrow" href="{{ '/projects/' | relative_url }}">All projects {% include icon.html name="arrow-right" %}</a>
   </div>
   <div class="grid grid--home">
     {% assign msc = site.projects | where: "degree", "msc" | sort: "order" %}
@@ -61,7 +61,7 @@ layout: default
       <h3 class="tl-what">{{ t.what }}</h3>
       <p class="tl-where">{{ t.where }}</p>
       {% if t.text %}<p class="tl-text">{{ t.text }}</p>{% endif %}
-      {% if t.link %}<a class="link-arrow" href="{{ t.link | relative_url }}">See the project <i class="fas fa-arrow-right"></i></a>{% endif %}
+      {% if t.link %}<a class="link-arrow" href="{{ t.link | relative_url }}">See the project {% include icon.html name="arrow-right" %}</a>{% endif %}
     </li>
     {% endfor %}
   </ol>
@@ -85,7 +85,7 @@ layout: default
     <ul class="certs">
       {% for c in cv.certifications %}
       <li class="reveal">
-        {% if c.url %}<a href="{{ c.url }}" target="_blank" rel="noopener">{{ c.name }} <i class="fas fa-arrow-up-right-from-square"></i></a>{% else %}<span>{{ c.name }}</span>{% endif %}
+        {% if c.url %}<a href="{{ c.url | relative_url }}" target="_blank" rel="noopener">{{ c.name }} {% include icon.html name="arrow-up-right" %}</a>{% else %}<span>{{ c.name }}</span>{% endif %}
         <small>{{ c.by }} · {{ c.when }}</small>
       </li>
       {% endfor %}
@@ -103,6 +103,10 @@ layout: default
 
 <section class="contact reveal">
   <h2>Let's talk robots.</h2>
-  <p>Open to internships and collaborations in robotics, perception and control.</p>
-  <a class="btn btn--primary" href="mailto:{{ site.email }}"><i class="far fa-envelope"></i> {{ site.email }}</a>
+  <p>Open to internships, collaborations and master thesis projects in robotics, perception and control.</p>
+  <div class="contact-actions">
+    <a class="btn btn--primary" href="mailto:{{ site.email }}">{% include icon.html name="mail" %} {{ site.email }}</a>
+    <a class="btn" href="mailto:{{ site.email_academic }}">{% include icon.html name="graduation-cap" %} {{ site.email_academic }}</a>
+  </div>
+  <p class="contact-note">Academic email · Politecnico di Milano</p>
 </section>

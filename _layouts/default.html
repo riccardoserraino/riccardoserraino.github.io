@@ -19,7 +19,7 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}?v={{ site.time | date: '%s' }}">
 
   {% seo %}
@@ -28,20 +28,6 @@
 
   {% if page.mathjax %}{% include mathjax.html %}{% endif %}
 
-  <!-- Load fontawesome asynchronously: https://stackoverflow.com/a/35880730/9523246 -->
-  <script type="text/javascript">
-    (function () {
-      var css = document.createElement('link');
-      css.href = 'https://use.fontawesome.com/releases/v6.7.2/css/all.css';
-      css.rel = 'stylesheet';
-      css.type = 'text/css';
-      var showIcons = function () { document.body.classList.add('fontawesome-loaded'); };
-      css.onload = showIcons;
-      css.onerror = showIcons;
-      setTimeout(showIcons, 1500);
-      document.getElementsByTagName('head')[0].appendChild(css);
-    })();
-  </script>
 </head>
 
 <body class="{% if page.layout == 'project' %}is-report{% endif %}">

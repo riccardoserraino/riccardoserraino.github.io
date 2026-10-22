@@ -10,20 +10,21 @@ role: Undergraduate Thesis Researcher, human motion analysis
 period: Apr 2025 – Jul 2025
 place: Laboratory of Automation and Robotics, University of Bologna
 team: "Contributor: Giuliano Livi · Supervisors: Prof. R. Meattini, A. Bernardini, M. Orlandi, Prof. S. Benatti"
-cover: /assets/images/projects/bsc-thesis-semg-tracking/setup-annotated.png
+cover: /assets/images/projects/bsc-thesis-semg-tracking/setup-annotated.webp
 cover_fit: contain
 summary: Dual-sensor framework fusing a 16-channel sEMG armband with Vicon motion capture. Sparse NMF muscle synergies estimate hand closure and are scored against kinematic ground truth.
 tags: [Python, ROS1, Docker, Sparse NMF, Vicon, Inverse kinematics, Signal processing]
 links:
-  - label: Thesis
-    url: https://drive.google.com/file/d/18HuvX0WKXi2LKNznNzuhpGeAeX1RkCgy/view?usp=sharing
-    icon: fas fa-book
+  - label: Request the thesis
+    url: "mailto:ricc.serraino@gmail.com?subject=Request%3A%20BSc%20thesis%20(sEMG%20%26%20Motion%20Tracking)&body=Hi%20Riccardo%2C%0A%0AI%20would%20like%20to%20read%20your%20bachelor%20thesis.%0A%0AName%3A%0AOrganisation%3A%0AReason%3A%0A%0AThanks!"
+    icon: mail
+    note: The full thesis is shared on request. Send me an email and I'll reply with a download link.
   - label: Slides
     url: https://docs.google.com/presentation/d/1xnjj_YqmfuwMnQDb104f-VHUoS_RU7xX/edit?usp=sharing&ouid=103037998880995221201&rtpof=true&sd=true
-    icon: fas fa-person-chalkboard
+    icon: presentation
   - label: Repository
     url: https://github.com/riccardoserraino/sEMG_Motion_Tracking
-    icon: fab fa-github
+    icon: github
 metrics:
   - value: 4/4
     label: thesis grade
@@ -52,7 +53,7 @@ Can **muscle synergies**, the coordinated activation patterns the nervous system
 
 To answer this, I built a **dual-sensor experimental framework** that records muscle activity and hand kinematics at the same time, so the EMG estimate can be checked against an independent ground truth.
 
-{% include figure.html src="/assets/images/projects/bsc-thesis-semg-tracking/testing.jpg" caption="Recording session: EMG armband on the forearm, reflective-marker glove and the Vicon cameras around the workspace." %}
+{% include figure.html src="/assets/images/projects/bsc-thesis-semg-tracking/testing.webp" caption="Recording session: EMG armband on the forearm, reflective-marker glove and the Vicon cameras around the workspace." %}
 
 ## Experimental setup
 
@@ -60,9 +61,9 @@ To answer this, I built a **dual-sensor experimental framework** that records mu
 - **Motion capture**: a Vicon system tracking reflective markers on a custom glove, with markers on the fingertips and a rigid triangle on the back of the hand.
 - **Synchronisation**: both streams recorded inside a **ROS** environment while subjects performed **15 gestures**: single-finger flexions plus power, pinch, ulnar and object grasps (bottle, pen, phone, tablet…).
 
-{% include figure-pair.html a="/assets/images/projects/bsc-thesis-semg-tracking/biogap-armband.jpg" a_caption="16-channel BioGAP sEMG armband" b="/assets/images/projects/bsc-thesis-semg-tracking/glove.jpg" b_caption="Marker glove for optical tracking" %}
+{% include figure-pair.html a="/assets/images/projects/bsc-thesis-semg-tracking/biogap-armband.webp" a_caption="16-channel BioGAP sEMG armband" b="/assets/images/projects/bsc-thesis-semg-tracking/glove.webp" b_caption="Marker glove for optical tracking" %}
 
-{% include figure.html src="/assets/images/projects/bsc-thesis-semg-tracking/pipeline.png" caption="Overall framework: two parallel pipelines (sEMG and kinematics) meet in the hand-closure comparison." %}
+{% include figure.html src="/assets/images/projects/bsc-thesis-semg-tracking/pipeline.webp" caption="Overall framework: two parallel pipelines (sEMG and kinematics) meet in the hand-closure comparison." %}
 
 ## Kinematic ground truth
 
@@ -70,7 +71,7 @@ Raw Vicon markers come **unlabelled** and sometimes drop out. I used the **Hunga
 
 Each finger was modelled as a **3-DOF planar manipulator** with Denavit–Hartenberg parameters, and its joint angles were recovered through **inverse kinematics**. Averaging the normalised joint angles of all fingers gives a continuous **closure index**, the benchmark for the EMG estimate.
 
-{% include figure-pair.html a="/assets/images/projects/bsc-thesis-semg-tracking/hand-model-grasp.png" a_caption="Reconstructed hand model during a grasp" b="/assets/images/projects/bsc-thesis-semg-tracking/theta-angle.png" b_caption="Finger flexion angle between knuckle axis and fingertip" %}
+{% include figure-pair.html a="/assets/images/projects/bsc-thesis-semg-tracking/hand-model-grasp.webp" a_caption="Reconstructed hand model during a grasp" b="/assets/images/projects/bsc-thesis-semg-tracking/theta-angle.webp" b_caption="Finger flexion angle between knuckle axis and fingertip" %}
 
 ## Synergy-based estimation
 
@@ -78,10 +79,10 @@ The EMG channels are band-pass filtered (**Butterworth, 4th order, 20–500 Hz**
 
 The closure estimate comes from the **difference between flexion-related and extension-related synergy activations**, normalised with a reference value computed on training data.
 
-{% include figure-pair.html a="/assets/images/projects/bsc-thesis-semg-tracking/bandpass-bode.png" a_caption="Bode diagram of the band-pass filter" b="/assets/images/projects/bsc-thesis-semg-tracking/snmf-decomposition.png" b_caption="Sparse NMF decomposition of a power-grasp recording" %}
+{% include figure-pair.html a="/assets/images/projects/bsc-thesis-semg-tracking/bandpass-bode.webp" a_caption="Bode diagram of the band-pass filter" b="/assets/images/projects/bsc-thesis-semg-tracking/snmf-decomposition.webp" b_caption="Sparse NMF decomposition of a power-grasp recording" %}
 
 ## Results
 
 The EMG-based closure index was compared with the motion-capture closure for each gesture, and the estimation error was measured over single trials and repeated grasps. Synergies turned out to be an **interpretable representation of movement intent** that **follows the dynamics of hand closure**, which makes them a good basis for future work on human–machine interfaces, robotic teleoperation and prosthetic hand control.
 
-{% include figure.html src="/assets/images/projects/bsc-thesis-semg-tracking/closure-repetitions.png" caption="Repeated power grasps: Vicon closure (top), synergy-based EMG closure (middle) and their absolute difference (bottom)." %}
+{% include figure.html src="/assets/images/projects/bsc-thesis-semg-tracking/closure-repetitions.webp" caption="Repeated power grasps: Vicon closure (top), synergy-based EMG closure (middle) and their absolute difference (bottom)." %}

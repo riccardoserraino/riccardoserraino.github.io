@@ -154,7 +154,7 @@
   letter-spacing: 0.03em;
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
 }
-.card-ribbon i { margin-right: 4px; }
+.card-ribbon .icon { margin-right: 4px; }
 
 .card-body {
   display: flex;
@@ -184,8 +184,8 @@
   font-size: 0.76rem;
   color: var(--deg);
 }
-.card-cta i { margin-left: 6px; transition: transform 0.25s ease; }
-.card:hover .card-cta i { transform: translateX(5px); }
+.card-cta .icon { margin-left: 6px; transition: transform 0.25s ease; }
+.card:hover .card-cta .icon { transform: translateX(5px); }
 
 /* featured (thesis / flagship): wide, side-by-side */
 .card--featured {

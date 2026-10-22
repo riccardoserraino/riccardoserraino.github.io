@@ -3,19 +3,19 @@ title: Quadcopter Frame
 short_title: Quadcopter Frame
 subtitle: Parametric CAD design of a lightweight quadcopter frame, built around stiffness-to-weight and manufacturability.
 degree: msc
-order: 3
+order: 5
 kind: Course project · CAD
 role: Designer
 period: MSc coursework, 2025 – 2026
 place: Politecnico di Milano
-cover: /assets/images/projects/quadcopter-frame/cad.png
+cover: /assets/images/projects/quadcopter-frame/cad.webp
 cover_fit: contain
 summary: Constraint-driven Fusion 360 model of a quadcopter frame, tuned for symmetry, balanced mass and stiffness-to-weight, with clean routing for standard components.
 tags: [Fusion 360, Parametric CAD, DFM, Technical drawings]
 links:
   - label: Download model
     url: https://drive.google.com/file/d/1tWVB5hPg3WMRdmAUrZLJ5Mw5jjcwYnOI/view?usp=sharing
-    icon: fas fa-cube
+    icon: box
 metrics:
   - value: 100%
     label: parametric, constraint-driven
@@ -40,7 +40,7 @@ The frame was modelled in **Autodesk Fusion 360** with a fully **parametric, con
 
 The geometry was tuned for **symmetry**, **balanced mass distribution** and a good **stiffness-to-weight ratio**. It stays compatible with standard drone components and leaves clean paths for **cable routing**.
 
-{% include figure.html src="/assets/images/projects/quadcopter-frame/cad.png" caption="Final frame: lattice cut-outs reduce mass while ribs keep the central plate and arms stiff." %}
+{% include figure.html src="/assets/images/projects/quadcopter-frame/cad.webp" caption="Final frame: lattice cut-outs reduce mass while ribs keep the central plate and arms stiff." %}
 
 ## Manufacturability
 

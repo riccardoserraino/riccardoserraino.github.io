@@ -9,17 +9,17 @@ role: Research Intern, machine learning for human–robot interaction
 period: Feb 2025 – Apr 2025
 place: Laboratory of Automation and Robotics, University of Bologna
 team: "Supervisors: Prof. R. Meattini, A. Bernardini"
-cover: /assets/images/projects/synergy-extraction/synergy-network.png
+cover: /assets/images/projects/synergy-extraction/synergy-network.webp
 cover_fit: contain
 summary: Compared NMF, Sparse NMF, PCA and autoencoders for extracting muscle synergies from forearm EMG, with automatic tuning of the number of synergies and their sparsity.
 tags: [Python, NMF, Sparse NMF, PCA, Autoencoders, Cross-validation]
 links:
   - label: Report
     url: https://drive.google.com/file/d/1_Y5TupEP1J0GJu6uWnu5huAnkOlGUJwy/view?usp=sharing
-    icon: fas fa-file-pdf
+    icon: file-text
   - label: Repository
     url: https://github.com/riccardoserraino/muscle_synergy_extraction_analysis
-    icon: fab fa-github
+    icon: github
 metrics:
   - value: "4"
     label: decomposition methods compared
@@ -46,7 +46,7 @@ Controlling a robotic hand finger by finger from raw multi-channel EMG is hard: 
 
 This internship, at the Laboratory of Automation and Robotics of the University of Bologna, explored which **unsupervised learning** methods give the best low-dimensional representation of forearm EMG during grasping.
 
-{% include figure.html src="/assets/images/projects/synergy-extraction/synergy-network.png" caption="The idea: many EMG channels → a few hidden synergies → motion intent." %}
+{% include figure.html src="/assets/images/projects/synergy-extraction/synergy-network.webp" caption="The idea: many EMG channels → a few hidden synergies → motion intent." %}
 
 ## Development phases
 
@@ -55,7 +55,7 @@ This internship, at the Laboratory of Automation and Robotics of the University 
 3. **Autoencoders**: non-linear dimensionality reduction for more expressive representations of muscle activity.
 4. **Comparative study**: PCA vs classical NMF vs Sparse NMF, using RMSE across different numbers of synergies.
 
-{% include figure.html src="/assets/images/projects/synergy-extraction/snmf-decomposition.png" caption="Sparse NMF decomposition: input EMG (top), synergy weights per channel (middle), synergy activations over time (bottom)." %}
+{% include figure.html src="/assets/images/projects/synergy-extraction/snmf-decomposition.webp" caption="Sparse NMF decomposition: input EMG (top), synergy weights per channel (middle), synergy activations over time (bottom)." %}
 
 ## Software
 

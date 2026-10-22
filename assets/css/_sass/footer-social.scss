@@ -4,12 +4,8 @@
   justify-content: center;
   flex-wrap: wrap;
   gap: 10px;
-  opacity: 0;
-  transition: opacity 0.2s ease-in;
 }
 
-// fontawesome-loaded is added to <body> in _layouts/default.html once the icon font is ready
-body.fontawesome-loaded .rounded-social-buttons { opacity: 1; }
 
 .rounded-social-buttons .social-button {
   display: inline-grid;

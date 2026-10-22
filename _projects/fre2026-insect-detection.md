@@ -18,16 +18,16 @@ tags: [ROS 2, YOLO11, Luxonis OAK-D Pro, DepthAI, C++, Python, Docker, RViz, Fox
 links:
   - label: Project hub
     url: https://github.com/riccardoserraino/Insect_Classifier
-    icon: fab fa-github
+    icon: github
   - label: YOLO training
     url: https://github.com/riccardoserraino/Insect_Detection_YOLO
-    icon: fas fa-brain
+    icon: brain
   - label: OAK-D / ROS 2 node
     url: https://github.com/riccardoserraino/OAK_Detection
-    icon: fas fa-camera
+    icon: camera
   - label: FRE2026
     url: https://www.fieldrobotevent.eu/
-    icon: fas fa-tractor
+    icon: tractor
 metrics:
   - value: "3"
     label: insect classes (bee, butterfly, ladybug)

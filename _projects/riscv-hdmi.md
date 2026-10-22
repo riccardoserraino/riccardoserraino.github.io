@@ -8,17 +8,17 @@ kind: Course project · FPGA / SoC
 role: Designer
 period: Exchange year, 2023 – 2024
 place: Tongji University, Shanghai
-cover: /assets/images/projects/riscv-hdmi/waveform.png
+cover: /assets/images/projects/riscv-hdmi/waveform.webp
 cover_fit: contain
 summary: HDMI display peripheral on the ICB bus of a Hummingbird E203 RISC-V core. ASCII characters received over UART are turned into bitmaps in dual-port RAM and streamed at 640×480 at 60 Hz.
 tags: [Verilog, FPGA, RISC-V E203, ICB bus, UART, HDMI, GTKWave]
 links:
   - label: Report
     url: https://drive.google.com/file/d/1w2TtdcQ2QrlF73KoMJBM5KisJqT4Dvpf/view?usp=sharing
-    icon: fas fa-file-pdf
+    icon: file-text
   - label: Repository
     url: https://github.com/riccardoserraino/HDMI-Interface-design-on-Verilog
-    icon: fab fa-github
+    icon: github
 metrics:
   - value: 640×480
     label: resolution at 60 Hz
@@ -54,7 +54,7 @@ The design is a modular pipeline:
 
 At start-up a **colour-bar test mode** checks the timing and signal integrity before switching to character rendering.
 
-{% include figure.html src="/assets/images/projects/riscv-hdmi/waveform.png" caption="GTKWave trace: bus writes into the frame buffer, followed by the HDMI sync and RGB activity." %}
+{% include figure.html src="/assets/images/projects/riscv-hdmi/waveform.webp" caption="GTKWave trace: bus writes into the frame buffer, followed by the HDMI sync and RGB activity." %}
 
 ## Debugging
 

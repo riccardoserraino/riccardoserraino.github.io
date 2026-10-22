@@ -83,18 +83,64 @@
 
 .hero-signal {
   grid-column: 1 / -1;
-  height: 110px;
-  margin: 8px -24px 0;
-  opacity: 0.9;
+  height: 170px;
+  margin: 8px 0 0;
 }
-.signal { width: 100%; height: 100%; display: block; }
-.signal-path {
-  stroke-dasharray: 1;
-  stroke-dashoffset: 1;
-  animation: draw 3.2s cubic-bezier(0.6, 0.1, 0.2, 1) 0.2s forwards;
+
+/* hero visual: neural network → robot arm → drone */
+.hv { width: 100%; height: 100%; display: block; overflow: visible; }
+.hv * { transform-box: view-box; }
+.hv-edges path { stroke: var(--line-2); stroke-width: 1; fill: none; opacity: 0.8; }
+.hv-flow path {
+  stroke: var(--accent);
+  stroke-width: 2;
+  fill: none;
+  stroke-dasharray: 14 260;
+  animation: hv-flow 3.2s linear infinite;
 }
-@keyframes draw { to { stroke-dashoffset: 0; } }
-@media (prefers-reduced-motion: reduce) { .signal-path { stroke-dashoffset: 0; } }
+.hv-flow .d2 { stroke: var(--msc); animation-delay: -1.1s; }
+.hv-flow .d3 { stroke: var(--bsc); animation-delay: -2.2s; }
+@keyframes hv-flow { from { stroke-dashoffset: 274; } to { stroke-dashoffset: 0; } }
+
+.hv-nodes circle { fill: var(--surface); stroke: var(--accent); stroke-width: 2; }
+.hv-nodes .out { fill: var(--accent); animation: hv-blink 1.6s ease-in-out infinite; }
+.hv-nodes .out + .out { animation-delay: 0.8s; }
+@keyframes hv-blink { 50% { opacity: 0.35; } }
+
+.hv-bus { stroke: var(--line-2); stroke-width: 2; fill: none; }
+.hv-bus-flow {
+  stroke: var(--accent);
+  stroke-width: 2.5;
+  fill: none;
+  stroke-dasharray: 18 400;
+  animation: hv-bus 2.6s linear infinite;
+}
+@keyframes hv-bus { from { stroke-dashoffset: 418; } to { stroke-dashoffset: 0; } }
+
+.hv-label { font-family: $font-mono; font-size: 11px; fill: var(--muted); }
+
+.hv-link { stroke: var(--text); stroke-width: 9; stroke-linecap: round; opacity: 0.9; }
+.hv-link.thin { stroke-width: 5; }
+.hv-joint { fill: var(--bg); stroke: var(--accent); stroke-width: 3; }
+.hv-base { fill: var(--text); opacity: 0.9; }
+.hv-grip { stroke: var(--text); stroke-width: 4; stroke-linecap: round; fill: none; }
+.hv-ground { stroke: var(--line-2); stroke-width: 2; stroke-dasharray: 4 6; }
+.hv-obj { fill: var(--msc); opacity: 0.85; }
+.hv-bbox { fill: none; stroke: var(--accent); stroke-width: 1.5; stroke-dasharray: 5 4; animation: hv-blink 2s ease-in-out infinite; }
+
+.hv-j1 { transform-origin: 770px 150px; animation: hv-j1 6s ease-in-out infinite; }
+.hv-j2 { transform-origin: 770px 72px; animation: hv-j2 6s ease-in-out infinite; }
+.hv-j3 { transform-origin: 868px 62px; animation: hv-j3 6s ease-in-out infinite; }
+@keyframes hv-j1 { 0%, 100% { transform: rotate(-6deg); } 50% { transform: rotate(4deg); } }
+@keyframes hv-j2 { 0%, 100% { transform: rotate(-4deg); } 50% { transform: rotate(10deg); } }
+@keyframes hv-j3 { 0%, 100% { transform: rotate(10deg); } 50% { transform: rotate(-14deg); } }
+
+.hv-uav { animation: hv-hover 3.4s ease-in-out infinite; }
+@keyframes hv-hover { 50% { transform: translateY(-10px); } }
+.hv-rotor { fill: var(--accent); opacity: 0.35; animation: hv-spin 0.25s linear infinite; transform-box: fill-box; transform-origin: center; }
+@keyframes hv-spin { 50% { transform: scaleX(0.6); } }
+.hv-scan { stroke: var(--accent); stroke-width: 1.2; fill: none; opacity: 0.5; }
+.hv-scan.dashed { stroke-dasharray: 3 4; }
 
 @include media-query($on-laptop) {
   .hero { grid-template-columns: 1fr; padding-top: 48px; }
@@ -239,7 +285,7 @@
 }
 .certs li:first-child, .langs li:first-child { padding-top: 0; }
 .certs a, .certs span, .langs span { color: var(--text); font-weight: 500; }
-.certs a i { font-size: 0.7em; color: var(--accent); margin-left: 4px; }
+.certs a .icon { font-size: 0.7em; color: var(--accent); margin-left: 4px; }
 .certs a:hover { color: var(--accent); }
 .certs small, .langs small {
   font-family: $font-mono;
@@ -262,3 +308,5 @@
 .contact h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); margin-bottom: 10px; }
 .contact p { color: var(--text-2); margin-bottom: 26px; }
 .contact .btn { word-break: break-all; }
+.contact-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+.contact-note { margin: 14px 0 0 !important; font-family: $font-mono; font-size: 0.72rem; color: var(--muted) !important; }

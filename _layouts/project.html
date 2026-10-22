@@ -14,7 +14,7 @@ layout: default
 <article class="report report--{{ page.degree }}">
   <nav class="crumbs" aria-label="Breadcrumb">
     <a href="{{ '/projects/' | relative_url }}">Projects</a>
-    <i class="fas fa-chevron-right"></i>
+    {% include icon.html name="chevron-right" %}
     <a href="{{ '/projects/' | relative_url }}#{{ page.degree }}">{{ school }}</a>
   </nav>
 
@@ -33,9 +33,10 @@ layout: default
     {% if page.links %}
     <div class="report-links">
       {% for l in page.links %}
-      <a class="btn{% if forloop.first %} btn--primary{% endif %}" href="{{ l.url }}" target="_blank" rel="noopener"><i class="{{ l.icon | default: 'fas fa-link' }}"></i> {{ l.label }}</a>
+      <a class="btn{% if forloop.first %} btn--primary{% endif %}" href="{{ l.url }}"{% unless l.url contains 'mailto:' %} target="_blank" rel="noopener"{% endunless %}>{% assign ic = l.icon | default: "link" %}{% include icon.html name=ic %} {{ l.label }}</a>
       {% endfor %}
     </div>
+    {% for l in page.links %}{% if l.note %}<p class="report-note">{% include icon.html name="lock" %} {{ l.note }}</p>{% endif %}{% endfor %}
     {% endif %}
   </header>
 
@@ -84,12 +85,12 @@ layout: default
 
   <nav class="pager" aria-label="More projects">
     <a class="pager-link pager-link--prev" href="{{ prev.url | relative_url }}">
-      <small><i class="fas fa-arrow-left"></i> Previous</small>
+      <small>{% include icon.html name="arrow-left" %} Previous</small>
       <span>{{ prev.short_title | default: prev.title }}</span>
     </a>
-    <a class="pager-link pager-link--all" href="{{ '/projects/' | relative_url }}"><i class="fas fa-grip"></i><small>All projects</small></a>
+    <a class="pager-link pager-link--all" href="{{ '/projects/' | relative_url }}">{% include icon.html name="layout-grid" %}<small>All projects</small></a>
     <a class="pager-link pager-link--next" href="{{ next.url | relative_url }}">
-      <small>Next <i class="fas fa-arrow-right"></i></small>
+      <small>Next {% include icon.html name="arrow-right" %}</small>
       <span>{{ next.short_title | default: next.title }}</span>
     </a>
   </nav>

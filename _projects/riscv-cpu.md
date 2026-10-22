@@ -8,17 +8,17 @@ kind: Course project · Digital design
 role: Designer
 period: Exchange year, 2023 – 2024
 place: Tongji University, Shanghai
-cover: /assets/images/projects/riscv-cpu/architecture.png
+cover: /assets/images/projects/riscv-cpu/architecture.webp
 cover_fit: contain
 summary: Single-cycle RV32I CPU in Verilog with PC, ALU, register file, memories and a two-level decoder, verified instruction by instruction in simulation.
 tags: [Verilog, RISC-V, RV32I, GTKWave, Digital design]
 links:
   - label: Report
     url: https://drive.google.com/file/d/1Zgx8-IQiTUCd5IgYAtTKtxsAx3KvLRBM/view?usp=sharing
-    icon: fas fa-file-pdf
+    icon: file-text
   - label: Repository
     url: https://github.com/riccardoserraino/RISCV-Single-Cycle-CPU-Core-on-Verilog
-    icon: fab fa-github
+    icon: github
 metrics:
   - value: 32-bit
     label: RISC-V core
@@ -43,7 +43,7 @@ pipeline:
 
 The goal was a fully working processor for the **RV32I** base instruction set, written in **Verilog**, with datapath and control designed together so that every instruction executes correctly within its timing.
 
-{% include figure.html src="/assets/images/projects/riscv-cpu/architecture.png" caption="Single-cycle datapath and control overview." narrow=true %}
+{% include figure.html src="/assets/images/projects/riscv-cpu/architecture.webp" caption="Single-cycle datapath and control overview." %}
 
 ## Architecture
 

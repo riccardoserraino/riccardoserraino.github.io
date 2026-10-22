@@ -5,7 +5,7 @@ eyebrow: Automation & Control Engineering · Politecnico di Milano
 tagline: I build the perception and control that let robots understand people and the world around them, from muscle signals to cameras on a field robot.
 profile:
   align: right
-  image: profile.png
+  image: profile.webp
 published: true
 ---
 

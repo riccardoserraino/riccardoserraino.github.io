@@ -8,14 +8,14 @@ kind: Course project · Industrial automation
 role: Control designer
 period: BSc coursework
 place: University of Bologna
-cover: /assets/images/projects/coffee-machine-plc/hmi.png
+cover: /assets/images/projects/coffee-machine-plc/hmi.webp
 cover_fit: contain
 summary: PLC control of an automatic coffee machine in CODESYS (SFC + ST) with a supervisor that coordinates generalised actuators, an interactive HMI and fault-safe alarm logic.
 tags: [CODESYS V3.5, IEC 61131-3, SFC, Structured Text, HMI, Alarm management]
 links:
   - label: Report
     url: https://drive.google.com/file/d/1RlMFnOefR9BGjMiyVZKrw9emmvjuI0VZ/view?usp=sharing
-    icon: fas fa-file-pdf
+    icon: file-text
 metrics:
   - value: "4"
     label: beverages
@@ -40,7 +40,7 @@ pipeline:
 
 The project models a realistic beverage process with **industrial automation** principles. A **CODESYS** application controls an automatic coffee machine with **four beverages** and **three coffee strengths**, combining sequential control, a Human-Machine Interface and fault management.
 
-{% include figure.html src="/assets/images/projects/coffee-machine-plc/process-schematic.png" caption="Process schematic: tanks, dispensers, brewing unit, valves and sensors." %}
+{% include figure.html src="/assets/images/projects/coffee-machine-plc/process-schematic.webp" caption="Process schematic: tanks, dispensers, brewing unit, valves and sensors." %}
 
 ## Control architecture
 
@@ -50,4 +50,4 @@ The control follows a **supervisor** pattern that coordinates several **Generali
 
 An interactive **HMI** shows ingredient levels, temperatures and the current process state in real time. A **multi-level alarm system** detects faults (piston up/down errors, water and milk faults) and puts the machine in a safe state. The operator then has to **acknowledge** the alarm and run a **reset** procedure before operation can resume.
 
-{% include figure.html src="/assets/images/projects/coffee-machine-plc/hmi.png" caption="Operator HMI: beverage and strength selection, machine information, alarm list and fault injection buttons." narrow=true %}
+{% include figure.html src="/assets/images/projects/coffee-machine-plc/hmi.webp" caption="Operator HMI: beverage and strength selection, machine information, alarm list and fault injection buttons." narrow=true %}

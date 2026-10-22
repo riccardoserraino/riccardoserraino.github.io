@@ -2,7 +2,7 @@
 <a class="card card--{{ p.degree }}{% if include.featured %} card--featured{% endif %} reveal" href="{{ p.url | relative_url }}">
   <div class="card-media card-media--{{ p.cover_fit | default: 'contain' }}"{% if p.cover_bg %} style="background: {{ p.cover_bg }}"{% endif %}>
     <img src="{{ p.cover | relative_url }}" alt="" loading="lazy">
-    {% if include.featured %}<span class="card-ribbon">{% if p.kind contains 'thesis' %}<i class="fas fa-graduation-cap"></i> Thesis{% else %}<i class="fas fa-star"></i> Flagship{% endif %}</span>{% endif %}
+    {% if include.featured %}<span class="card-ribbon">{% if p.kind contains 'thesis' %}{% include icon.html name="graduation-cap" %} Thesis{% else %}{% include icon.html name="star" %} Flagship{% endif %}</span>{% endif %}
   </div>
   <div class="card-body">
     <p class="card-kind">{{ p.kind }}</p>
@@ -16,6 +16,6 @@
     <ul class="chips chips--sm">
       {% for t in p.tags limit: tl %}<li>{{ t }}</li>{% endfor %}
     </ul>
-    <span class="card-cta">Read the report <i class="fas fa-arrow-right"></i></span>
+    <span class="card-cta">Read the report {% include icon.html name="arrow-right" %}</span>
   </div>
 </a>
