@@ -83,12 +83,16 @@
 
 .hero-signal {
   grid-column: 1 / -1;
-  height: 170px;
   margin: 8px 0 0;
 }
 
 /* hero visual: neural network → robot arm → drone */
-.hv { width: 100%; height: 100%; display: block; overflow: visible; }
+.hv { width: 100%; height: auto; display: block; overflow: visible; }
+.hv--stack { display: none; max-width: 560px; margin: 0 auto; }
+@include media-query($on-palm) {
+  .hv--wide { display: none; }
+  .hv--stack { display: block; }
+}
 .hv * { transform-box: view-box; }
 .hv-edges path { stroke: var(--line-2); stroke-width: 1; fill: none; opacity: 0.8; }
 .hv-flow path {
