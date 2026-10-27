@@ -27,6 +27,13 @@ markdown: kramdown
 # Tracker
 analytics:
 
+# Visit counter (GoatCounter, free, no cookies). Put your GoatCounter code here,
+# e.g. "riccardoserraino" if your dashboard is riccardoserraino.goatcounter.com.
+# Leave empty to switch the counter off completely. See GUIDE.md, section 8.
+goatcounter: ""
+# Show "N visits in the past month" at the bottom of the home page (true/false).
+show_visits: true
+
 # optimization -> compress.html
 compress_html:
   clippings: [html,div, p, ul, td, h1, h2, h3, h4,link, meta, footer, nav, img, header, hr, br, head, style, li, ul, ol, time, main, script, title]

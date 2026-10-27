@@ -78,4 +78,18 @@
     }, { passive: true });
     update();
   }
+
+  /* ---- visit counter (GoatCounter): fills the small line in the home footer ---- */
+  var visits = document.querySelector('.visits[data-gc]');
+  if (visits && window.fetch) {
+    fetch('https://' + visits.getAttribute('data-gc') + '.goatcounter.com/counter/TOTAL.json?start=month')
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (d) {
+        if (d && d.count) {
+          visits.querySelector('.visits-n').textContent = d.count;
+          visits.hidden = false;
+        }
+      })
+      .catch(function () {});
+  }
 })();

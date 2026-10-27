@@ -74,6 +74,18 @@ Open http://localhost:4000. The page reloads when you save a file.
 
 The thesis page has no direct download. Its *Request the thesis* button opens an email to you, and you reply with the Drive link yourself. To change the email text, edit the `mailto:` link in `_projects/semg-motion-tracking.md`.
 
+## 8. Visit counter
+
+The site counts visits with [GoatCounter](https://www.goatcounter.com) (free for personal sites, no cookies, no banner needed). Only you can see the full statistics: they are in your GoatCounter dashboard, behind your login.
+
+**Set it up once:**
+1. Sign up at goatcounter.com and choose a code, e.g. `riccardoserraino`. Your dashboard will be `https://riccardoserraino.goatcounter.com`.
+2. In `_config.yml`, set `goatcounter: "riccardoserraino"` (your code), then push.
+3. To show the small "N visits in the past month" line at the bottom of the home page: in the dashboard, go to *Settings* and enable **Allow adding visitor counts on your website**. To keep the number private, leave that setting off or set `show_visits: false` in `_config.yml`. Only the date then shows, and you still see everything in the dashboard.
+4. So your own visits aren't counted, open `https://riccardoserraino.github.io/#toggle-goatcounter` once on each of your devices and browsers.
+
+To switch it off completely, set `goatcounter: ""`.
+
 ## Safe to delete
 
 `_pages/projects.md`, `_includes/signal.html`, `assets/css/_sass/google-fonts.scss`, `assets/images/profile.png` and the old `.png`/`.jpg` files in `assets/images/projects/` (the site now uses the `.webp` versions). None of them is used any more.

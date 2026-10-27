@@ -46,14 +46,15 @@
     {% unless layout.hide_social_footer or page.hide_social_footer %}
     {% include social-footer.html %}
     {% endunless %}
-    <p class="copy">
-      &copy; {{ site.title }} {{ site.time | date: '%Y' }} · Built with Jekyll ·
-      Last updated {{ site.time | date: '%B %-d, %Y' }}
+    <p class="copy">&copy; {{ site.title }} {{ site.time | date: '%Y' }} · Built with Jekyll</p>
+    <p class="copy copy--meta">
+      Last updated {{ site.time | date: '%B %-d, %Y' }}{% if site.goatcounter and site.goatcounter != "" and site.show_visits and page.url == '/' %}<span class="visits" data-gc="{{ site.goatcounter }}" hidden> · <span class="visits-n"></span> visits in the past month</span>{% endif %}
     </p>
   </footer>
 
   <script src="{{ '/assets/js/site.js' | relative_url }}" defer></script>
   {% if site.analytics %}{% include analytics.html %}{% endif %}
+  {% if site.goatcounter and site.goatcounter != "" %}<script data-goatcounter="https://{{ site.goatcounter }}.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>{% endif %}
 </body>
 
 </html>
