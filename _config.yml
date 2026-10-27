@@ -30,7 +30,7 @@ analytics:
 # Visit counter (GoatCounter, free, no cookies). Put your GoatCounter code here,
 # e.g. "riccardoserraino" if your dashboard is riccardoserraino.goatcounter.com.
 # Leave empty to switch the counter off completely. See GUIDE.md, section 8.
-goatcounter: ""
+goatcounter: "riccardoserraino"
 # Show "N visits in the past month" at the bottom of the home page (true/false).
 show_visits: true
 
